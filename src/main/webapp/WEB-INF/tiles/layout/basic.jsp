@@ -1,4 +1,9 @@
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html ng-app="SpringApp" lang="en">
 <head>
@@ -10,50 +15,56 @@
 <meta name="author" content="">
 <meta name="_csrf" content="${_csrf.token}" />
 <meta name="_csrf_header" content="${_csrf.headerName}" />
-<link href="${contextPath}/resources/css/api/bootstrap.min.css"
-	rel="stylesheet">
-<link href="${contextPath}/resources/css/api/bootstrap-theme.min.css"
-	rel="stylesheet">
-<link href="${contextPath}/resources/css/api/style.css" rel="stylesheet">
 
-<link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 
-<link href="${contextPath}/resources/fonts/css/font-awesome.css"
+<link href="<c:url value="/resources/css/api/bootstrap.min.css" />"
+	rel="stylesheet">
+<link href="<c:url value="/resources/css/api/bootstrap-theme.min.css" />"
+	rel="stylesheet">
+<link href="<c:url value="/resources/css/api/style.css" />" rel="stylesheet">
+
+<link href="<c:url value="/resources/css/common.css" />" rel="stylesheet">
+
+<link href="<c:url value="/resources/fonts/css/font-awesome.css" />"
 	rel="stylesheet" type="text/css" />
-<link href="${contextPath}/resources/css/api/web.font.css"
-	rel="stylesheet" type="text/css" />
+<%-- <link href="<c:url value="/resources/css/api/web.font.css" />"
+	rel="stylesheet" type="text/css" /> --%>
 
 
 <!-- API JS -->
-<script src="${contextPath}/resources/js/api//jquery.min.js"
+<script src="<c:url value="/resources/js/api//jquery.min.js" />"
 	type="text/javascript"></script>
-<script src="${contextPath}/resources/js/api//bootstrap.min.js"
+<script src="<c:url value="/resources/js/api//bootstrap.min.js" />"
 	type="text/javascript"></script>
 
-<script src="${contextPath}/resources/js/api/html5.js"
+<script src="<c:url value="/resources/js/api/html5.js" />"
 	type="text/javascript"></script>
-<script src="${contextPath}/resources/js/api/jquery.bootpag.min.js"
+<script src="<c:url value="/resources/js/api/jquery.bootpag.min.js" />"
 	type="text/javascript"></script>
-<script src="${contextPath}/resources/js/api/css_browser_selector.js"
+<script src="<c:url value="/resources/js/api/css_browser_selector.js" />"
 	type="text/javascript"></script>
 
 <!-- Angular JS -->
-<script src="${contextPath}/resources/js/api/angular.min.js"
+<script src="<c:url value="/resources/js/api/angular.min.js" />"
 	type="text/javascript"></script>
-<script src="${contextPath}/resources/js/api/angular-sanitize.js"
+<script src="<c:url value="/resources/js/api/angular-sanitize.js" />"
 	type="text/javascript"></script>
-<script src="${contextPath}/resources/js/api/xeditable.js"
+<script src="<c:url value="/resources/js/api/xeditable.js" />"
 	type="text/javascript"></script>
-<script src="${contextPath}/resources/js/api/easypiechart.js"
+<script src="<c:url value="/resources/js/api/easypiechart.js" />"
 	type="text/javascript"></script>
-<script src="${contextPath}/resources/js/angular-config.js"
+<script src="<c:url value="/resources/js/angular-config.js" />"
 	type="text/javascript"></script>
 
-<script src="${contextPath}/resources/js/common.js"></script>
-<script src="${contextPath}/resources/js/BaseController.js"></script>
+<script src="<c:url value="/resources/js/common.js" />"></script>
+<script src="<c:url value="/resources/js/BaseController.js" />"></script>
+
+
 <script type="text/javascript">
 	var token = $("meta[name='_csrf']").attr("content");
-	var contextPath = '${contextPath}';
+	
+	var contextPath = '${pageContext.request.contextPath}';
+	console.log("BaseURL =====> "+contextPath)
 </script>
 
 <title><tiles:getAsString name="title" /></title>

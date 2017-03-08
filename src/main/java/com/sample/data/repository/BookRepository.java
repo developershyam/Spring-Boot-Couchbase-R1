@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sample.data.model.Book;
 /**
- * This is Book repository.
+ * This is Book repository used to perform CRUD operations.
  * 
  * @author shyam.pareek
  *
